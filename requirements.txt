@@ -1,5 +1,6 @@
 protobuf>=3.20.0,<4.0.0
-descript-audio-codec==0.7.2
+git+https://github.com/descriptinc/audiotools
+descript-audio-codec
 transformers<4.47.0,>=4.45.1
 librosa
 dacite
