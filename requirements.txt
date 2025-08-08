@@ -1,10 +1,13 @@
 git+https://github.com/descriptinc/audiotools
 descript-audio-codec
-transformers<4.47.0,>=4.45.1
+torch
+transformers>=4.45.1,<4.47.0
 librosa
 dacite
 boto3==1.35.36
 s3fs
+torchvision
+torchaudio
 json_repair
 pandas
 pydantic
