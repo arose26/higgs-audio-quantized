@@ -6,7 +6,7 @@ from pydub import AudioSegment
 import os 
 
  # Load model and tokenizer
-model_client = load_model_and_tokenizer(
+model_client, audio_tokenizer = load_model_and_tokenizer(
     model_path="bosonai/higgs-audio-v2-generation-3B-base",
     audio_tokenizer="bosonai/higgs-audio-v2-tokenizer",
     max_new_tokens=2048,
@@ -85,6 +85,7 @@ def generate(input_text="Hi there.", index=None):
 
     default_kwargs = dict(
         model_client=model_client,
+        audio_tokenizer=audio_tokenizer,
         transcript="transcript/single_speaker/en_dl.txt",
         scene_prompt=f"/content/higgs-audio-quantized/scene_prompts/quiet_indoor.txt",
         temperature=1.0,
@@ -103,7 +104,7 @@ def generate(input_text="Hi there.", index=None):
     )
     if len(input_text) <= 350:
         kwargs = default_kwargs.copy()
-        kwargs.update(dict(transcript=input_text, ref_audio="reference_long", temperature=0.3,
+        kwargs.update(dict(transcript=input_text, ref_audio="trash", temperature=0.3,
                   out_path=filename))
         main(**kwargs)
         #files.download(filename)
@@ -117,7 +118,7 @@ def generate(input_text="Hi there.", index=None):
     for i, chunk in enumerate(chunks):
         temp_filename = f"temp_{i}.wav"
         kwargs = default_kwargs.copy()
-        kwargs.update(dict(transcript=chunk, ref_audio="reference_long", temperature=0.3,
+        kwargs.update(dict(transcript=chunk, ref_audio="trash", temperature=0.3,
                   out_path=temp_filename))
         main(**kwargs)
         temp_files.append(temp_filename)

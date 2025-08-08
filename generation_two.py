@@ -524,11 +524,12 @@ def load_model_and_tokenizer(
         use_static_kv_cache=use_static_kv_cache,
     )
     
-    return model_client
+    return model_client, audio_tokenizer
 
 
 def main(
     model_client,
+    audio_tokenizer,
     transcript="transcript/single_speaker/en_dl.txt",
     scene_prompt=f"{CURR_DIR}/examples/scene_prompts/quiet_indoor.txt",
     temperature=1.0,
