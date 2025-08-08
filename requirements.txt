@@ -1,5 +1,5 @@
 protobuf>=3.20.0,<4.0.0
-descript-audio-codec
+descript-audio-codec==0.7.2
 transformers<4.47.0,>=4.45.1
 librosa
 dacite
