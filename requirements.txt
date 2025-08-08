@@ -1,4 +1,4 @@
-descript-audiotools-unofficial
+git+https://github.com/descriptinc/audiotools
 descript-audio-codec
 torch
 transformers>=4.45.1,<4.47.0
