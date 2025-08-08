@@ -1,6 +1,6 @@
-protobuf>=3.19.6,<4.0.0
+protobuf>=3.20.0,<4.0.0
 descript-audio-codec
-transformers>=4.45.1,<4.47.0
+transformers<4.47.0,>=4.45.1
 librosa
 dacite
 boto3==1.35.36
