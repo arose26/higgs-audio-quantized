@@ -197,3 +197,4 @@ result/
 
 # Ruff
 .ruff_cache/
+.python-version
