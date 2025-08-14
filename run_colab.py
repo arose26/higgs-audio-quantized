@@ -35,7 +35,7 @@ def process_text(text):
     """Process text to remove extra spaces and newlines"""
     #Remove [01:13:16] timestamps
     text = re.sub(r'\[[0-9]{2}:[0-9]{2}:[0-9]{2}\]', '', text.strip())
-    pairs = [('ok','OK'),("im","I'm"),("theyre","they're"),("wont","won't")]
+    pairs = [('ok','OK'),("im","I'm"),("theyre","they're"),("wont","won't"),("hes","he's"),("shes","she's"),('hte','the'),('id', "I'd")]
     for a,b in pairs:
         text = text.replace(f" {a} ", f" {b} ")
     return text
